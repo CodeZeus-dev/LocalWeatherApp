@@ -1,0 +1,24 @@
+<div class="header">
+  <h1>Loci Tempestas</h1>
+</div>
+
+<main>
+  <div class="card text-center">
+    <div class="spinner-grow text-secondary" role="status" *ngIf="!weatherIcon">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="card-body" *ngIf="weatherIcon">
+      <h2 class="card-title">{{ city }}</h2>
+      <hr />
+      <div class="card-text">
+        <h3>{{ temperature }} {{ tempUnit }}</h3>
+        <img [src]="weatherIcon" alt="" />
+      </div>
+    </div>
+    <div class="card-footer" *ngIf="weatherIcon">
+      <button class="btn btn-secondary" (click)="getTempC()">°C</button>
+      <div class="divider"></div>
+      <button class="btn btn-secondary" (click)="getTempF()">°F</button>
+    </div>
+  </div>
+</main>
